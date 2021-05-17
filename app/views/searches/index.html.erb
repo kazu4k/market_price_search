@@ -1,5 +1,46 @@
 <big>相場を知りたい車の情報を入力</big>
 
+<%= search_form_for @q, url: search_searches_path do |f| %>
+
+  <%= f.label :maker_cont, 'メーカー' %>
+  <div class="search_box">
+    <%= f.search_field :maker_cont %>
+  </div>
+  
+  <%= f.label :vehicle_type_cont, '車種' %>
+  <div class="search_box">
+    <%= f.search_field :vehicle_type_cont %>
+  </div>
+
+  <%= f.label :grade_cont, 'グレード' %>
+  <div class="search_box">
+    <%= f.search_field :grade_cont %>
+  </div>
+
+  <%= f.label :model_cont, '型式' %>
+  <div class="search_box">
+    <%= f.search_field :model_cont %>
+  </div>
+
+  <%= f.label :model_year_cont, '年式' %>
+  <div class="search_box">
+    <%= f.search_field :model_year_cont %>
+  </div>
+
+  <%= f.label :mileage_gteq, '走行距離（下限）' %>
+  <div class="search_box">
+    <%= f.search_field :mileage_gteq %>km
+  </div>
+
+  <%= f.label :mileage_lteq, '走行距離（上限）' %>
+  <div class="search_box">
+    <%= f.search_field :mileage_lteq %>km
+  </div>
+
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
+
 <div class="index_title">
   <big>相場一覧</big>
 </div>

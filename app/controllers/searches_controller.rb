@@ -1,7 +1,8 @@
 class SearchesController < ApplicationController
 
-  before_action :admin_check, except: [:index, :show]
-  before_action :set_search, except: [:index, :new, :create]
+  before_action :admin_check, except: [:index, :show, :search]
+  before_action :set_search, except: [:index, :new, :create, :search]
+  before_action :set_q, only: [:index, :search]
 
   def index
     @searches = Search.all
@@ -42,6 +43,10 @@ class SearchesController < ApplicationController
     end
   end
 
+  def search
+    @results = @q.result
+  end
+
   private
 
   def search_params
@@ -62,6 +67,10 @@ class SearchesController < ApplicationController
     if current_user.admin == false
       redirect_to root_path
     end
+  end
+
+  def set_q
+    @q = Search.ransack(params[:q])
   end
 
 end
