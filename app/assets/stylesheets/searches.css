@@ -1,5 +1,6 @@
 header {
   height: 30px;
+  margin: 10px;
 }
 
 .wrapper {
@@ -8,7 +9,11 @@ header {
   overflow: scroll;
 }
 
-.index_cars{
+.index_title {
+  margin-top: 30px;
+}
+
+.index_cars {
   margin: 10px;
 }
 
