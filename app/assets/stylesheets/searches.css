@@ -1,0 +1,25 @@
+header {
+  height: 30px;
+}
+
+.wrapper {
+  height: calc(100vh - 30px);
+  margin: 10px;
+  overflow: scroll;
+}
+
+.index_cars{
+  margin: 10px;
+}
+
+form {
+  margin: 10px;
+}
+
+.form_box {
+  margin: 10px;
+}
+
+.devise {
+  margin: 10px;
+}

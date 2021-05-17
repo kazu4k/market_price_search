@@ -1,2 +1,19 @@
-<h1>Searches#index</h1>
-<p>Find me in app/views/searches/index.html.erb</p>
+<big>相場を知りたい車の情報を入力</big>
+
+<div class="index_title">
+  <big>相場一覧</big>
+</div>
+
+<% @searches.each do |car| %>
+  <div class="index_cars">
+    <%= link_to search_path(car) do %>
+      メーカー：<%= car.maker %>
+      車種：<%= car.vehicle_type %>
+      グレード：<%= car.grade %>
+      型式：<%= car.model %>
+      年式：<%= car.model_year %>
+      走行距離：<%= car.mileage %>km
+      相場価格：<%= car.market_price %>万円
+    <% end %>
+  </div>
+<% end %>
