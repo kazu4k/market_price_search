@@ -1,0 +1,45 @@
+<big>相場情報を編集</big>
+
+<%= form_with model: @search, local: true do |form| %>
+
+<%= render 'shared/error_messages', model: form.object %>
+  
+  <%= form.label :maker, "メーカー" %>
+  <div class="form_box">
+    <%= form.text_field :maker %>
+  </div>
+
+  <%= form.label :vehicle_type, "車種" %>
+  <div class="form_box">
+    <%= form.text_field :vehicle_type %>
+  </div>
+
+  <%= form.label :grade, "グレード" %>
+  <div class="form_box">
+    <%= form.text_field :grade %>
+  </div>
+
+  <%= form.label :model, "型式" %>
+  <div class="form_box">
+    <%= form.text_field :model %>
+  </div>
+
+  <%= form.label :model_year, "年式" %>
+  <div class="form_box">
+    <%= form.number_field :model_year %>
+  </div>
+
+  <%= form.label :mileage, "走行距離" %>
+  <div class="form_box">
+    <%= form.number_field :mileage %>km
+  </div>
+
+  <%= form.label :market_price, "相場価格" %>
+  <div class="form_box">
+    <%= form.number_field :market_price %>万円
+  </div>
+
+  <%= form.submit "投稿する" %>
+  <%= link_to "戻る", search_path(@search) %>
+
+<% end %>

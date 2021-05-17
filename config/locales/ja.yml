@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    attributes:
+      search:
+        maker: メーカー
+        vehicle_type: 車種
+        grade: グレード
+        model: 型式
+        model_year: 年式
+        mileage: 走行距離
+        market_price: 相場価格

@@ -1,0 +1,26 @@
+<div class="show_car">
+  メーカー：<%= @search.maker %>
+</div>
+<div class="show_car">
+  車種：<%= @search.vehicle_type %>
+</div>
+<div class="show_car">
+  グレード：<%= @search.grade %>
+</div>
+<div class="show_car">
+  型式：<%= @search.model %>
+</div>
+<div class="show_car">
+  年式：<%= @search.model_year %>
+</div>
+<div class="show_car">
+  走行距離：<%= @search.mileage %>km
+</div>
+<div class="show_car">
+  相場価格：<%= @search.market_price %>万円
+</div>
+
+<% if current_user.admin? %>
+  <%= link_to "編集", edit_search_path(@search) %>
+  <%= link_to "削除", search_path(@search), method: :delete %>
+<% end %>

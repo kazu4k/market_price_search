@@ -12,12 +12,18 @@
   <body>
     <header>
       <% if user_signed_in? %>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%></li>
+        <% if current_user.admin? %>
+          <%= link_to "投稿する", new_search_path %>
+        <% end %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "devise"%>
       <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <%= link_to 'ログイン', new_user_session_path, class: "devise" %>
+        <%= link_to '新規登録', new_user_registration_path, class: "devise" %>
       <% end %>
+      <%= link_to 'トップページへ戻る', root_path %>
     </header>
-    <%= yield %>
+    <div class="wrapper">
+      <%= yield %>
+    </div>
   </body>
 </html>
