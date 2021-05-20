@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
 
-  before_action :admin_check, except: [:index, :show, :search]
-  before_action :set_search, except: [:index, :new, :create, :search]
+  before_action :login_check, except: [:index, :show, :search, :login]
+  before_action :set_search, except: [:index, :new, :create, :search, :login]
   before_action :set_q, only: [:index, :search]
 
   def index
@@ -63,8 +63,8 @@ class SearchesController < ApplicationController
     @search = Search.find(params[:id])
   end
 
-  def admin_check
-    if current_user.admin == false
+  def ligin_check
+    if user_signed_in?
       redirect_to root_path
     end
   end

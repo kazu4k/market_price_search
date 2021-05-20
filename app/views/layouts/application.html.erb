@@ -11,15 +11,7 @@
 
   <body>
     <header>
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-          <%= link_to "投稿する", new_search_path %>
-        <% end %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "devise"%>
-      <% else %>
-        <%= link_to 'ログイン', new_user_session_path, class: "devise" %>
-        <%= link_to '新規登録', new_user_registration_path, class: "devise" %>
-      <% end %>
+      <%= link_to '■', login_searches_path %>
       <%= link_to 'トップページへ戻る', root_path %>
     </header>
     <div class="wrapper">
