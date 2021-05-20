@@ -20,7 +20,7 @@
   相場価格：<%= @search.market_price %>万円
 </div>
 
-<% if current_user.admin? %>
+<% if user_signed_in? %>
   <%= link_to "編集", edit_search_path(@search) %>
   <%= link_to "削除", search_path(@search), method: :delete %>
 <% end %>
