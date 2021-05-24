@@ -14,8 +14,9 @@ class SearchesController < ApplicationController
 
   def create
     @search = Search.new(search_params)
-    if @search.save
-      redirect_to root_path
+    if @search.valid?
+      new_car = Search.create(search_params)
+      redirect_to search_path(new_car.id)
     else
       render 'new'
     end
@@ -64,7 +65,7 @@ class SearchesController < ApplicationController
   end
 
   def login_check
-    if user_signed_in?
+    unless user_signed_in?
       redirect_to root_path
     end
   end
